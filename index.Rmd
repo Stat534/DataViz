@@ -15,7 +15,7 @@ library(leaflet)
 ```
 
 
-## Data Viz Overview
+## Spatial Data Viz Overview
 
 Data visualization is an essential part of the statistical analysis process, both for exploratory analyses and summarizing findings.
 
@@ -54,7 +54,9 @@ In particular, some options include:
 - and many others...
 
 
-## Point Data: What is this?
+## Point Data
+
+### Point Data: What is this?
 ```{r, fig.align= 'center'}
 set.seed(01082021)
 uber <- read_csv('uber_coords.csv') %>% sample_n(200)
@@ -63,17 +65,20 @@ plot(y = uber$Lat, x=uber$Lon, xlab = 'Longitude', ylab = 'Latitude')
 ```
 
 
-## Point Data: How about now?
-```{r, fig.cap = 'Hello?'}
+### Point Data: How about now?
+```{r, fig.cap = 'Location of Uber pickups in the New York City area. The points represent a random sample of locations.', echo = T}
 leaflet(uber) %>%
   addTiles() %>%
-  addCircles(lng = ~Lon, lat = ~Lat, fillOpacity = .01)
+  addCircles(lng = ~Lon, lat = ~Lat)
 ```
 
 
-
 ## Active Learning Exercise: Seattle Police Calls Data Viz
+
+Explore the Seattle police dataset (or a spatial dataset of your own) and leaflet to make an interactive data visualization.
+
 ```{r, message = T, echo = T}
 seattle <- read_csv('SeattlePolice.csv')
 ```
 
+The [leaflet overview](https://rstudio.github.io/leaflet/) is a great resource for getting started.
