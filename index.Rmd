@@ -1,0 +1,79 @@
+---
+title: 'Lecture 1: Spatial Data Viz'
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(fig.width = 7.5)
+knitr::opts_chunk$set(fig.height = 5.5)
+knitr::opts_chunk$set(fig.align = 'center')
+library(readr)
+library(ggmap)
+library(dplyr)
+library(knitr)
+library(rgdal)
+library(raster)
+```
+
+
+## Data Viz Overview
+
+Data visualization is an essential part of the statistical analysis process, both for exploratory analyses and summarizing findings.
+
+##### Exploratory Data Analysis
+
+- Used for data quality checks
+
+- Help explore and understand the data
+
+- Typically, not seen by anyone else
+
+##### Polished Data Visualization
+
+- Used to summarize data in presentations or papers
+
+- Should *stand alone* with appropriate titles, axes, labels, and captions
+
+- `ggplot2` makes creating polished figures easier: [cheat sheet](https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf)
+
+## Spatial Data Viz Tools
+
+There are many tools for creating spatial figures (GIS software, Tableau, etc...), but we will exclusively use R and the wide range of packages within it.
+
+In particular, some options include:
+
+- `ggplot2`
+
+- `ggmap`
+
+- `leaflet`
+
+- `RgoogleMaps`
+
+- `tmap`
+
+- and many others...
+
+
+## Point Data: What is this?
+```{r, fig.align= 'center'}
+uber <- read_csv('uber_coords.csv')
+plot(y = uber$Lat, x=uber$Lon, xlab = 'Longitude', ylab = 'Latitude')
+```
+
+
+## Point Data: How about now?
+```{r}
+
+```
+
+
+
+## Active Learning Exercise: Seattle Police Calls Data Viz
+```{r, message = T, echo = T}
+seattle <- read_csv('SeattlePolice.csv')
+```
+
